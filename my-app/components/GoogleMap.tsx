@@ -17,7 +17,7 @@ const GoogleMap = () => {
     if (!document.querySelector("script#google-maps")) {
       const script = document.createElement("script");
       script.id = "google-maps";
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDfsowgGEsJy3CUQxJIy31d3o2uGmRvCko&callback=initializeMap`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API}&callback=initializeMap`;
       script.async = true;
       script.defer = true;
       document.head.appendChild(script);
@@ -39,7 +39,7 @@ const GoogleMap = () => {
 
       const waqiMapOverlay = new google.maps.ImageMapType({
         getTileUrl: (coord: google.maps.Point, zoom: number) =>
-          `https://tiles.aqicn.org/tiles/usepa-aqi/${zoom}/${coord.x}/${coord.y}.png?token=eae070748993f71974251679b75a6a685f3ba928`,
+          `https://tiles.aqicn.org/tiles/usepa-aqi/${zoom}/${coord.x}/${coord.y}.png?token=${process.env.AQICN_API}`,
         name: "Air Quality",
       });
 

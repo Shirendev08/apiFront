@@ -45,22 +45,22 @@ const GoogleMap = () => {
       widgetScript.id = "aqicn-widget";
       widgetScript.src = "https://aqicn.org/widget/scripts/aqi-widget.js";
       widgetScript.async = true;
-      // widgetScript.onload = initializeWidget;
+      widgetScript.onload = initializeWidget;
       document.body.appendChild(widgetScript);
     }
 
-    // function initializeWidget() {
-    //   if (widgetRef.current) {
-    //     widgetRef.current.innerHTML = `
-    //       <div id="aqi-widget" style="width:100%; height:auto;">
-    //         <iframe
-    //           src="https://aqicn.org/widget/view/?token=eae070748993f71974251679b75a6a685f3ba928&city=ulaanbaatar"
-    //           style="border:0; width:100%; height:100%;"
-    //         ></iframe>
-    //       </div>
-    //     `;
-    //   }
-    // }
+    function initializeWidget() {
+      if (widgetRef.current) {
+        widgetRef.current.innerHTML = `
+          <div id="aqi-widget" style="width:100%; height:auto;">
+            <iframe
+              src="https://aqicn.org/widget/view/?token=eae070748993f71974251679b75a6a685f3ba928&city=ulaanbaatar"
+              style="border:0; width:100%; height:100%;"
+            ></iframe>
+          </div>
+        `;
+      }
+    }
 
     return () => {
       // Cleanup if necessary
@@ -105,8 +105,8 @@ const GoogleMap = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-      <div id="map" ref={mapRef} style={{ height: "100%", width: "100%" }} />
-      {/* <div ref={widgetRef} style={{ height: "30%", width: "100%" }} /> */}
+      <div id="map" ref={mapRef} style={{ height: "70%", width: "100%" }} />
+       <div ref={widgetRef} style={{ height: "30%", width: "100%" }} /> 
       <button
         onClick={getUserLocation}
         style={{

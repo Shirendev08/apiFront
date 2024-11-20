@@ -64,7 +64,7 @@ const GoogleMap = () => {
           const { latitude, longitude } = position.coords;
           try {
             const response = await fetch(
-              `https://api.waqi.info/feed/geo:${latitude};${longitude}/?token=eae070748993f71974251679b75a6a685f3ba928`
+              `https://api.waqi.info/feed/geo:${latitude};${longitude}/?token=${process.env.AQICN_API}`
             );
             const data = await response.json();
             if (data.status === "ok") {

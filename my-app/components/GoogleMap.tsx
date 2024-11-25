@@ -101,7 +101,7 @@ const GoogleMap = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-RapidAPI-Key": "e1b75410aemsh25be6f5e579bb8ap15bdacjsn098f8f344007",
+          "X-RapidAPI-Key": process.env.OPEN_AI_KEY,
           "X-RapidAPI-Host": "chatgpt-42.p.rapidapi.com",
         },
         body: JSON.stringify({

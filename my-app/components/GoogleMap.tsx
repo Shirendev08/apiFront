@@ -104,7 +104,7 @@ const GoogleMap = () => {
     const options = {
       method: 'POST',
       headers: {
-        'x-rapidapi-key': 'f1f842cab2msh0946c87ea15c3a2p17ebe0jsn645c7b089abc',
+        'x-rapidapi-key': 'c0a2d3b7a8mshe348abd873a4e4ep17385djsn44c42053c9a5',
         'x-rapidapi-host':
           'cheapest-gpt-4-turbo-gpt-4-vision-chatgpt-openai-ai-api.p.rapidapi.com',
         'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ const GoogleMap = () => {
         messages: [
           {
             role: 'user',
-            content: `Hello, right now I'm in a city with an Air Quality Index of ${aqi}, and the dominant pollutant is ${pollutant}. Can you provide safety reminders for such conditions? and send response as mongolian`,
+            content: `right now I'm in a city with an Air Quality Index of ${aqi}, and the dominant pollutant is ${pollutant}. Can you provide safety reminders for such conditions? and send response as mongolian`,
           },
         ],
         model: 'gpt-4', // Replace with the correct model name
@@ -185,10 +185,10 @@ const GoogleMap = () => {
       zIndex: 1000,
     }}
   >
-    <h2 style={{ margin: "0 0 10px" }}>Air Quality Information</h2>
-    <p>City: {popupData.city}</p>
+    <h2 style={{ margin: "0 0 10px" }}>Агаарын чанарын мэдээлэл</h2>
+    <p>Хот: {popupData.city}</p>
     <p>
-      AQI:{" "}
+      Агаарын чанарын индекс:{" "}
       <span
         style={{
           color:
@@ -218,7 +218,7 @@ const GoogleMap = () => {
           : "💀"} 
       </span>
     </p>
-    <p>Dominant Pollutant: {popupData.pollutant}</p>
+    <p>Зонхилогч хорт хий: {popupData.pollutant}</p>
     <Button
       onClick={() => setPopupData(null)}
       
